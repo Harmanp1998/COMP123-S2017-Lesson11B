@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 27, 2017
  * Description: This is the Hand class
  * It inherits from the CardList Abstract class
- * Version: 0.1 - Created the Hand class
+ * Version: 0.2 - Added HisghestCards method
  */
 
 namespace COMP123_S2017_Lesson11B
@@ -50,5 +50,23 @@ namespace COMP123_S2017_Lesson11B
 
             return outputString;
         }
-    }
+        /// <summary>
+        /// This method identifies most valuable cards in the Hand Object
+        /// </summary>
+        /// <param name="hand"></param>
+        public void HighestCards(Hand hand)
+        {
+            var GFaceValue = from cards in hand
+                             orderby cards.Face descending
+                             select cards.Face;
+            Console.WriteLine("All Highest cards are :  ");
+            foreach (var valuable in GFaceValue)
+            {
+                {
+                    Console.WriteLine(valuable);
+                }
+
+
+            }
+        }
 }
