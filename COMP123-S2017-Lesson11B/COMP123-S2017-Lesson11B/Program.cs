@@ -44,7 +44,7 @@ namespace COMP123_S2017_Lesson11B
             Console.WriteLine();
 
             //Console.WriteLine(deck.ToString());
-            hand = deck.Deal5(); //moves top five cards from the deck to the  
+            hand = deck.Deal5(); //moves top five cards from the deck 
             //Console.WriteLine(hand);
             Console.WriteLine(hand.ToString());
             hand.HighestCards(hand);
