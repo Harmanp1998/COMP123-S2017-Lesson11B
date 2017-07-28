@@ -7,12 +7,12 @@ using System.Text;
  * Name: Harmanpreet Singh
  * Date: July 27, 2017
  * Description: This is the Card Class
- * Version: 0.1 - Created the Card class
+ * Version: 0.2 - Implemented the ICloneable interface
  */
 
 namespace COMP123_S2017_Lesson11B
 {
-    public class Card
+    public class Card : ICloneable
     {
         // PRIVATE INSTANCE VARIABLES
         private Face _face;
@@ -63,8 +63,18 @@ namespace COMP123_S2017_Lesson11B
             this.Suit = suit;
         }
 
+
         // PRIVATE METHODS
 
         // PUBLIC METHODS
+        /// <summary>
+        /// This method overrides the built-in Clone method.
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new Card(this.Face, this.Suit);
+        }
+
     }
 }
