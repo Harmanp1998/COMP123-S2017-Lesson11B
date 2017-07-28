@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 27, 2017
  * Description: This is the Deck class
  * It inherits from the CardList Abstract class
- * Version: 0.6 - Added the Deal1 method
+ * Version: 0.7 - Added the Deal5 method
  */
 
 namespace COMP123_S2017_Lesson11B
@@ -107,6 +107,22 @@ namespace COMP123_S2017_Lesson11B
             Console.WriteLine("Dealt 1 card - Size of Deck: " + this.Count);
 
             return topCard;
+        }
+        /// <summary>
+        /// This method returns the top 5 card of the deck
+        /// </summary
+        public Hand Deal5()
+        {
+            Hand topFiveHand = new Hand();
+            for (int topCards = 0; topCards <= 4; topCards++)
+            {
+                Card topFive = this[0];
+                topFiveHand.Add(this[0]);
+                this.RemoveAt(0); //this removes the cards dealt as top five
+                Console.WriteLine("Cards Dealt: {0} = {1} of {2} || Deck size = {3}", topCards + 1, topFive.Suit, topFive.Face, this.Count);
+            }
+            return topFiveHand;
+
         }
     }
 }
